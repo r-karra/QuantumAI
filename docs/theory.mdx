@@ -207,8 +207,138 @@ Here’s a simple picture of what’s happening:
     /         \
    /           \
 
+Detector A Detector B
+<---- distance ℓ ---->
 
 - The **beam splitter** divides the light into two paths.  
 - Each **detector** measures where the photons land.  
 - The **distance ℓ** is how far the photons travel before being detected.  
 - The **time tq** is how long it takes light to cross that distance.
+
+# Photon Sampling Time in a 3-Layer Quantum Experiment
+
+## Step-by-Step Explanation
+
+1. **Two photons per experiment:**  
+   Each experiment uses one photon pair passing through the setup.
+
+2. **Many repetitions needed:**  
+   To get a reliable distribution at the detectors, the experiment must be repeated **millions of times** and averaged.
+
+3. **Single-layer sampling time (`tₛ` or `tq`):**  
+   This is the time photons take to travel from the first beam splitter to the detectors:
+tₛ = ℓ / c
+
+where  
+- `ℓ` = distance between the beam splitter and detectors  
+- `c` = speed of light (~3 × 10⁸ m/s)
+
+4. **For a 3-layer setup:**
+
+t₃ = 3 × tₛ = 3 × (ℓ / c)
+
+
+5. **Numerical example:**
+ℓ = 1 meter
+c = 3 × 10⁸ m/s
+
+tₛ = 1 / (3 × 10⁸) = 3.33 × 10⁻⁹ s
+t₃ = 3 × 3.33 × 10⁻⁹ = 1 × 10⁻⁸ s
+
+
+✅ **Therefore, a 3-layer quantum experiment takes about 10 nanoseconds per photon pair** to complete one sampling event.
+
+---
+
+## Text Diagram
+
+Layer 1 Layer 2 Layer 3
+[BS1] ---> [BS2] ---> [BS3] ---> Detectors
+<---- distance ℓ ---->
+
+Total time: t₃ = 3 × (ℓ / c)
+
+# Photon Sampling Time in a Multi-Layer Quantum Experiment
+
+## Step-by-Step Explanation
+
+1. **Two photons per experiment:**  
+   Each experiment uses one photon pair passing through the setup.
+
+2. **Why repetition is needed:**  
+   A single pair of photons doesn’t tell us much.  
+   To find the **probability distribution** of where photons land at the detectors,  
+   we must repeat the experiment **millions of times** and average the outcomes.
+
+3. **Single-layer sampling time (`tₛ` or `tq`):**  
+   Each run takes the time for photons to travel from the beam splitter to the detectors:
+
+tₛ = ℓ / c
+
+where  
+- `ℓ` = distance from the beam splitter to the detectors  
+- `c` = speed of light (≈ 3 × 10⁸ m/s)
+
+---
+
+## Multi-Layer Setup
+
+If the experiment has **n layers** (for example, n beam splitters in sequence),  
+then the photons must travel the same gap **n times**.  
+
+Therefore, the **total sampling time** for one photon pair becomes:
+
+tₙ = n × tₛ = n × (ℓ / c)
+
+
+---
+
+## Example Calculations
+
+| Layers (n) | Distance ℓ (m) | Sampling Time (tₙ) in seconds | Time in nanoseconds |
+|-------------|----------------|--------------------------------|---------------------|
+| 1           | 1              | 3.33 × 10⁻⁹                   | 3.33 ns             |
+| 2           | 1              | 6.67 × 10⁻⁹                   | 6.67 ns             |
+| 3           | 1              | 1.00 × 10⁻⁸                   | 10.0 ns             |
+| 5           | 1              | 1.67 × 10⁻⁸                   | 16.7 ns             |
+| 10          | 1              | 3.33 × 10⁻⁸                   | 33.3 ns             |
+
+✅ **So, for a 3-layer setup:**  
+
+t₃ = 3 × (1 / 3×10⁸) = 1 × 10⁻⁸ seconds = 10 nanoseconds
+
+## General formula
+tₙ = n × (ℓ / c)
+
+
+where:
+- `tₙ` = total sampling time for n layers  
+- `n` = number of layers  
+- `ℓ` = distance between beam splitters/detectors  
+- `c` = speed of light (≈ 3 × 10⁸ m/s)
+
+---
+
+## Text Diagram
+
+Photon Source
+|
+v
+[BS1] ---> [BS2] ---> [BS3] ---> ... ---> [BSn] ---> Detectors
+<---- distance ℓ each ---->
+
+Total sampling time: tₙ = n × (ℓ / c)
+
+
+---
+
+## Summary
+
+- Each **layer** adds one more photon travel step.
+- **Time per layer** = ℓ / c.
+- **Total time for n layers** = n × ℓ / c.
+- For **3 layers** and **ℓ = 1 m**, total time ≈ **10 nanoseconds** per photon pair.
+- To get a reliable measurement, repeat the experiment **millions of times** and average the results.
+
+---
+
