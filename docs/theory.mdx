@@ -342,3 +342,80 @@ Total sampling time: tₙ = n × (ℓ / c)
 
 ---
 
+# Scaling of Computational Complexity in a Multi-Layer Quantum Game
+
+## Step-by-Step Explanation
+
+1. **Each beam splitter creates two possible paths.**  
+   When a photon reaches a beam splitter, it has two choices:
+   - Transmit (go straight)
+   - Reflect (turn)
+
+2. **Each new layer doubles the number of possible paths.**
+   - 1 layer → 2 paths  
+   - 2 layers → 4 paths  
+   - 3 layers → 8 paths  
+   - n layers → 2ⁿ paths  
+
+   So, for a single photon:
+
+Number of paths = 2ⁿ
+
+
+3. **For two photons:**
+Each photon can take any of the 2ⁿ paths, so together they can form every possible combination:
+
+Total combinations = (2ⁿ) × (2ⁿ) = 2^(2n)
+
+
+4. **Quantum interference requires considering every combination.**
+To calculate the total interference pattern, the simulation must evaluate all **2^(2n)** path combinations.
+
+5. **Computation time:**
+If one interference calculation takes time `t_c`,  
+then the total computation time is:
+
+T_total = 2^(2n) × t_c
+
+
+---
+
+## Example
+
+| Layers (n) | Paths per Photon (2ⁿ) | Total Path Combinations (2^(2n)) | Relative Time (×t_c) |
+|-------------|------------------------|----------------------------------|----------------------|
+| 1           | 2                      | 4                                | 4 × t_c             |
+| 2           | 4                      | 16                               | 16 × t_c            |
+| 3           | 8                      | 64                               | 64 × t_c            |
+| 4           | 16                     | 256                              | 256 × t_c           |
+| 5           | 32                     | 1024                             | 1024 × t_c          |
+
+---
+
+## Simple Visualization
+
+Layers of Beam Splitters:
+
+Photon enters →
+┌─┐
+│││
+Layer 1: 2 paths
+Layer 2: 4 paths
+Layer 3: 8 paths
+...
+Layer n: 2ⁿ paths
+
+Two photons → (2ⁿ) × (2ⁿ) = 2^(2n) path combinations
+
+
+---
+
+## Summary
+
+- Each **beam splitter** doubles the possible photon paths.  
+- An **n-layer setup** → **2ⁿ** paths for one photon.  
+- For **two photons**, total path combinations = **2^(2n)**.  
+- If each interference calculation takes time `t_c`,  
+  then total time required = **2^(2n) × t_c**.
+
+🧩 **This shows why quantum simulations become exponentially harder** as you add more layers — the number of paths grows incredibly fast!
