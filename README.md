@@ -1,5 +1,114 @@
 # Quantum AI
 # Resources
+# 🧠 Quantum Computing Foundations: A Learning Guide
+
+This is a list of beginner-friendly resources to help you gain the necessary foundational knowledge for learning the **Cirq** framework.  
+This guide assumes you are starting with minimal background in quantum computing and aims to equip you with the essential concepts and mathematical understanding needed before diving into the Cirq tutorials.
+
+---
+
+## 📚 Table of Contents
+1. [Online Courses](#online-courses)
+2. [Interactive and Hands-on Platforms](#interactive-and-hands-on-platforms)
+3. [Programming-focused Resources](#programming-focused-resources)
+4. [Learning Path Recommendation](#learning-path-recommendation)
+
+---
+
+## 🧩 Online Courses
+
+### [IBM Quantum Learning](https://quantum-computing.ibm.com/)
+**Description:**  
+A free, comprehensive platform that guides you from quantum information basics to running code on real quantum hardware using **Qiskit** (a Python SDK similar to Cirq).  
+The conceptual knowledge gained here is highly transferable.
+
+---
+
+### ["Introduction to Quantum Computing for Everyone" (UChicagoX via edX)](https://www.edx.org/course/introduction-to-quantum-computing)
+**Description:**  
+Designed for complete beginners and requires only a basic understanding of algebra.  
+Uses an intuitive approach to explain quantum phenomena and covers the essential components of quantum circuits and algorithms.
+
+---
+
+### ["Quantum Computing for Everyone" (Coursera)](https://www.coursera.org/specializations/quantum-computing)
+**Description:**  
+A beginner-friendly course from Fractal Analytics that makes quantum computing concepts accessible without heavy mathematics.  
+Covers core quantum mechanics, algorithms, and practical applications.
+
+---
+
+### [HarvardX: "Quantum Computing Fundamentals" (edX)](https://www.edx.org/course/quantum-computing-fundamentals)
+**Description:**  
+A more mathematically rigorous course that provides a solid foundation in vector spaces, qubits, and basic quantum algorithms.  
+Ideal for learners with a background in computer science or engineering.
+
+---
+
+## 🧪 Interactive and Hands-on Platforms
+
+### [Brilliant.org: "Introduction to Quantum Computing"](https://www.brilliant.org/courses/quantum-computing/)
+**Description:**  
+For those who prefer visual, interactive learning, this course offers a hands-on approach to **superposition**, **entanglement**, and **qubit circuits**.
+
+---
+
+### [IBM Quantum Platform](https://quantum-computing.ibm.com/lab)
+**Description:**  
+Provides access to real quantum hardware and interactive labs through the cloud.  
+Experimenting with simulators and small quantum circuits is an excellent way to build practical understanding of **quantum gates** and **measurements**.
+
+---
+
+### [Microsoft Quantum Development Kit (QDK)](https://learn.microsoft.com/en-us/quantum/overview/getting-started)
+**Description:**  
+A free toolkit that includes the **Q# programming language**, simulators, and extensive documentation with step-by-step tutorials.  
+A great way to learn quantum concepts through coding.
+
+---
+
+## 💻 Programming-focused Resources
+
+### [Quantum Katas (Microsoft Learn)](https://learn.microsoft.com/en-us/quantum/kata/)
+**Description:**  
+A self-paced, gamified series of programming exercises that help you learn quantum algorithms by writing code.  
+The Katas use **Q#**, but are excellent for reinforcing computational thinking and circuit logic.
+
+---
+
+### *Robert Hundt: "Quantum Computing for Programmers"*
+**Description:**  
+A book tailored for developers that explains complex topics using **Python** and **C++**.  
+Includes simulations for over 25 algorithms — bridging the gap between theoretical knowledge and hands-on practice.  
+**Link:** Check major booksellers such as *Amazon* or *O’Reilly*.
+
+---
+
+## 🧭 Learning Path Recommendation
+
+1. **Begin with the basics:**  
+   Start with a beginner-friendly course like **UChicagoX** or **Brilliant.org** to build an intuitive grasp of concepts such as *superposition* and *entanglement*.
+
+2. **Learn the math:**  
+   As your comfort grows, reinforce your understanding of **linear algebra** and **complex numbers**.  
+   Courses like **HarvardX Quantum Computing Fundamentals** or Coursera’s math primers are perfect for this.
+
+3. **Get hands-on experience:**  
+   Use simulators and real quantum devices via the **IBM Quantum Platform**.  
+   Practice building and visualizing quantum circuits to develop intuition for gate operations and measurements.
+
+4. **Dive into Cirq:**  
+   With your foundational knowledge in place, you’ll be ready to tackle **Cirq’s official tutorials and documentation** — applying what you’ve learned to simulate and run real quantum algorithms.
+
+---
+
+**💡 Tip:**  
+Quantum computing is a deep but rewarding field — focus on **conceptual understanding first**, then explore **mathematical details** and **practical tools** as you go.  
+Patience and curiosity are your best allies!
+
+
+
+
 ---
 
 ## 🤖 DeepMind & AI Ecosystem Learning
