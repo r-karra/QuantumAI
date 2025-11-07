@@ -1,25 +1,87 @@
-<style>
-  .video-container {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 ratio */
-    height: 0;
-    overflow: hidden;
-    max-width: 100%;
-  }
-  .video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotlights of Quantum Computing</title>
 
-<div class="video-container">
-  <iframe src="https://www.youtube.com/embed/dRkehLL19Wo" 
-          title="YouTube video player" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-  </iframe>
-</div>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #fafafa;
+    }
+
+    h2, h3 {
+      text-align: center;
+    }
+
+    /* Grid container */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      justify-items: center;
+      margin-top: 30px;
+    }
+
+    /* Responsive iframe */
+    .video-container {
+      position: relative;
+      width: 100%;
+      max-width: 560px;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <h2>ScienceClic English</h2>
+  <h3>The Physics of A.I. and More</h3>
+
+  <div class="video-grid">
+    <!-- Video 1 -->
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/dRkehLL19Wo"
+              title="The Physics of A.I."
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+    </div>
+
+    <!-- Video 2 -->
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/XtY6qKdCzrg"
+              title="Quantum Computing Explained"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+    </div>
+
+    <!-- Video 3 -->
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/Sc0T4rF1kSA"
+              title="How Quantum Computers Work"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+    </div>
+
+    <!-- Video 4 -->
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/JhHMJCUmq28"
+              title="Quantum Mechanics Basics"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+    </div>
+  </div>
+</body>
+</html>
