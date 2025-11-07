@@ -1,6 +1,6 @@
 ## ScienceClic English
 ### The Phisics of A.I
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dRkehLL19Wo?si=ITQLjvq0kmyWeirA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+[![Watch the video](https://img.youtube.com/vi/dRkehLL19Wo/maxresdefault.jpg)](https://youtu.be/dRkehLL19Wo)
 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/dRkehLL19Wo?si=ITQLjvq0kmyWeirA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+### [ The Physics of A.I.](https://youtu.be/dRkehLL19Wo)
