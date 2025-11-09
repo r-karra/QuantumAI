@@ -178,6 +178,8 @@ Each layer brings you closer to how quantum computers **process information geom
 
 # Isolation and Decoherence in Quantum Systems
 
+In quantum computing, isolated means a qubit is kept completely alone — no touching, no noise, no peeking — so it can stay perfectly quantum without losing its magic mix of 0 and 1.
+
 ## 1. What Does “Isolated” Mean?
 
 In everyday language, “isolated” means cut off — no contact or interference.  
@@ -409,3 +411,45 @@ An **isolated** quantum system evolves like a perfect symphony — no notes lost
 An **open** quantum system is like playing that symphony in a storm — the music fades as the environment listens in.
 
 Isolation is the dream; decoherence is the price of reality.
+
+## Squared magnitude of coefficients:
+**explain this more intuitively as I'm a kid: the probability of measuring one of the two basis states can be found by finding the relative squared magnitude of each of the coefficients.**
+
+Alright — imagine your qubit is like a spinning coin made of light that can be part-heads (|0⟩) and part-tails (|1⟩) at the same time.
+
+The two numbers (coefficients) in front of |0⟩ and |1⟩ tell how much “heads-ness” and how much “tails-ness” the coin has.
+
+When you finally stop the coin and look — the chance you’ll see heads or tails comes from how strong each side’s glow is.
+If you square those glow strengths (the magnitudes), you get the probabilities:
+a brighter side (bigger coefficient) means it’s more likely to show up when you look.
+
+Quick math demo (kid-friendly but real)
+```
+Consider a single qubit measured in the computational basis { |0⟩, |1⟩ }.
+
+State:
+
+|ψ⟩ = α|0⟩ + β|1⟩```
+
+with normalization:
+|α|^2 + |β|^2 = 1.
+
+Measurement rule (Born rule) using projectors P0 = |0⟩⟨0| and P1 = |1⟩⟨1|:
+p(0) = ⟨ψ| P0 |ψ⟩ = ⟨ψ|0⟩⟨0|ψ⟩ = |⟨0|ψ⟩|^2 = |α|^2
+p(1) = ⟨ψ| P1 |ψ⟩ = ⟨ψ|1⟩⟨1|ψ⟩ = |⟨1|ψ⟩|^2 = |β|^2
+
+So the probabilities are the squared magnitudes of the coefficients.
+
+Example (phase doesn’t matter):
+α = 1/√3
+β = √(2/3) · e^{iθ}   (any angle θ)
+
+p(0) = |α|^2 = 1/3
+p(1) = |β|^2 = 2/3
+
+The complex phase e^{iθ} cancels when you take the magnitude squared, so only the sizes of the coefficients matter for probabilities.
+
+Same idea in any basis { |u⟩, |v⟩ }:
+|ψ⟩ = c_u |u⟩ + c_v |v⟩  ⇒  p(u) = |c_u|^2,  p(v) = |c_v|^2.
+
+
