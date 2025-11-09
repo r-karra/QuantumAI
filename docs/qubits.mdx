@@ -178,8 +178,6 @@ Each layer brings you closer to how quantum computers **process information geom
 
 # Isolation and Decoherence in Quantum Systems
 
----
-
 ## 1. What Does “Isolated” Mean?
 
 In everyday language, “isolated” means cut off — no contact or interference.  
@@ -187,13 +185,11 @@ In **quantum mechanics**, an *isolated system* means:
 
 > A system that does **not interact** with its environment in any way that exchanges **energy** or **information**.
 
----
-
 ### 🧠 Why Isolation Matters
 
 Quantum systems are delicate. The moment they interact with the outside world, they lose their quantum coherence — the ability to exist in superpositions.
 
-- **Isolated system:** evolves according to its own Hamiltonian \( H_S \).  
+- **Isolated system:** evolves according to its own Hamiltonian `H_S`.  
   It remains in a *pure* quantum state.
 - **Open system:** interacts with its surroundings.  
   The environment “learns” something about the system’s state → **decoherence** occurs.
@@ -201,222 +197,201 @@ Quantum systems are delicate. The moment they interact with the outside world, t
 Decoherence is the primary obstacle in **quantum computing**.  
 It’s why we build qubit systems in **ultra-cold, shielded, vacuum environments** — to delay interaction with the noisy outside world.
 
----
-
 ### ⚙️ Intuitive Analogy
 
 Imagine a **spinning coin** under a glass dome:
 
 - **Isolated coin:** no air, no friction — it spins forever.  
-  ↳ Represents an ideal isolated quantum system.
+  → Represents an ideal isolated quantum system.
 - **Non-isolated coin:** air resistance and vibrations cause it to slow and fall.  
-  ↳ Represents an open quantum system undergoing decoherence.
+  → Represents an open quantum system undergoing decoherence.
 
 The environment acts like friction — it robs the system of quantum purity.
-
----
 
 ### 🔬 Mathematical Definition (Isolated System)
 
 An **isolated** quantum system obeys the **Schrödinger equation**:
 
-\[
-i\hbar \frac{d}{dt}|\psi(t)\rangle = H_S |\psi(t)\rangle
-\]
+```
+iħ * (d/dt)|ψ(t)⟩ = H_S |ψ(t)⟩
+```
 
-or, equivalently, for the **density matrix** \(\rho_S\):
+or, equivalently, for the **density matrix** `ρ_S`:
 
-\[
-\rho_S(t) = U(t)\rho_S(0)U^\dagger(t), \quad U(t) = e^{-iH_S t/\hbar}
-\]
+```
+ρ_S(t) = U(t) ρ_S(0) U†(t)
+U(t) = exp(-i H_S t / ħ)
+```
 
 **Properties of isolation:**
-- The evolution is **unitary**.
-- **Purity** (\(\mathrm{Tr}(\rho_S^2)\)) is preserved.
-- **Entropy** (\(S = -\mathrm{Tr}(\rho_S \log \rho_S)\)) is constant.
+- Evolution is **unitary**.
+- **Purity** (`Tr(ρ_S²)`) is preserved.
+- **Entropy** (`S = -Tr(ρ_S log ρ_S)`) remains constant.
 
 The system’s information stays intact — no leakage, no randomness.
-
----
 
 ## 2. Open Systems and Decoherence
 
 In reality, no quantum system is perfectly isolated.  
 Everything interacts — weakly or strongly — with its environment.
 
-Let’s model that mathematically.
-
----
-
 ### 2.1 System–Environment Framework
 
-Total system (system + environment):
+The total system (system + environment):
 
-\[
-H = H_S \otimes I_E + I_S \otimes H_E + H_{\text{int}}
-\]
+```
+H = H_S ⊗ I_E + I_S ⊗ H_E + H_int
+```
 
 If we start from a product state:
 
-\[
-\rho_{SE}(0) = \rho_S(0) \otimes \rho_E(0)
-\]
+```
+ρ_SE(0) = ρ_S(0) ⊗ ρ_E(0)
+```
 
 then evolve unitarily:
 
-\[
-\rho_{SE}(t) = U(t)\rho_{SE}(0)U^\dagger(t)
-\]
+```
+ρ_SE(t) = U(t) ρ_SE(0) U†(t)
+```
 
 The **system’s reduced state** is obtained by tracing out the environment:
 
-\[
-\rho_S(t) = \mathrm{Tr}_E[\rho_{SE}(t)]
-\]
+```
+ρ_S(t) = Tr_E[ ρ_SE(t) ]
+```
 
-Since the system becomes **entangled** with its environment, \(\rho_S(t)\) becomes **mixed** — losing coherence.
-
----
+Since the system becomes **entangled** with its environment, `ρ_S(t)` becomes **mixed** — losing coherence.
 
 ### 2.2 Decoherence: The Death of Off-Diagonals
 
-In a preferred (“pointer”) basis \(\{|i\rangle\}\):
+In a preferred (“pointer”) basis `{ |i⟩ }`:
 
-\[
-\rho_S(0) = \sum_{ij}\rho_{ij}|i\rangle\langle j| \quad \Rightarrow \quad
-\rho_S(t) = \sum_{ij}\rho_{ij}\Gamma_{ij}(t)|i\rangle\langle j|
-\]
+```
+ρ_S(0) = Σ_ij ρ_ij |i⟩⟨j|  
+→  
+ρ_S(t) = Σ_ij ρ_ij Γ_ij(t) |i⟩⟨j|
+```
 
-Here, \(|\Gamma_{ij}(t)| \le 1\).  
+Here, `|Γ_ij(t)| ≤ 1`.  
 As time passes:
-- \(\Gamma_{ii}(t) = 1\) → populations remain.
-- \(\Gamma_{ij}(t) \to 0\) → **off-diagonal elements vanish** → coherence is lost.
-
----
+- `Γ_ii(t) = 1` → populations remain.
+- `Γ_ij(t) → 0` → off-diagonal elements vanish → coherence is lost.
 
 ## 3. Quantum Channels: The Language of Open Systems
 
 Any valid quantum operation on a system can be expressed as a **completely positive trace-preserving (CPTP)** map:
 
-\[
-\rho_S(t) = \Phi(\rho_S(0)) = \sum_k K_k \rho_S(0) K_k^\dagger, \quad \sum_k K_k^\dagger K_k = I
-\]
+```
+ρ_S(t) = Φ(ρ_S(0)) = Σ_k K_k ρ_S(0) K_k†
+Σ_k K_k† K_k = I
+```
 
-These \(K_k\) are the **Kraus operators**, describing how the environment affects the system.
-
----
+These `K_k` are the **Kraus operators**, describing how the environment affects the system.
 
 ### 3.1 Pure Dephasing (Phase Damping)
 
 Preserves populations but kills coherence.
 
-\[
-K_0 = \sqrt{1-p}\,I, \quad
-K_1 = \sqrt{p}\,|0\rangle\langle0|, \quad
-K_2 = \sqrt{p}\,|1\rangle\langle1|
-\]
+```
+K_0 = √(1 - p) * I
+K_1 = √p * |0⟩⟨0|
+K_2 = √p * |1⟩⟨1|
+```
 
 Result:  
-\(\rho_{01} \mapsto (1-2p)\rho_{01}\) → phase information fades.
-
----
+`ρ_01 → (1 - 2p) ρ_01` → phase information fades.
 
 ### 3.2 Amplitude Damping (Energy Relaxation)
 
-Models energy decay (\(|1\rangle \to |0\rangle\)) with probability \(\gamma\):
+Models energy decay (`|1⟩ → |0⟩`) with probability `γ`:
 
-\[
-K_0 = \begin{pmatrix}1 & 0 \\ 0 & \sqrt{1-\gamma}\end{pmatrix}, \quad
-K_1 = \begin{pmatrix}0 & \sqrt{\gamma} \\ 0 & 0\end{pmatrix}
-\]
+```
+K_0 = [[1, 0],
+       [0, √(1 - γ)]]
 
-Corresponds to **\(T_1\)** relaxation time.
+K_1 = [[0, √γ],
+       [0, 0]]
+```
 
----
+Corresponds to **T₁ relaxation time**.
 
 ## 4. Continuous-Time: The Lindblad Master Equation
 
 When environmental effects are weak and memoryless (Markovian), the system evolves as:
 
-\[
-\frac{d}{dt}\rho_S = -\frac{i}{\hbar}[H_S, \rho_S] + \sum_\ell
-\left(L_\ell \rho_S L_\ell^\dagger - \tfrac{1}{2}\{L_\ell^\dagger L_\ell, \rho_S\}\right)
-\]
+```
+dρ_S/dt = -(i/ħ)[H_S, ρ_S]
+          + Σ_ℓ [ L_ℓ ρ_S L_ℓ† - (1/2){L_ℓ† L_ℓ, ρ_S} ]
+```
 
-where \(L_\ell\) are **Lindblad operators** describing specific noise channels.
-
----
+where `L_ℓ` are **Lindblad operators** describing specific noise channels.
 
 ### Common Examples
 
 | Process | Lindblad Operator | Effect | Characteristic Time |
 |----------|------------------|---------|---------------------|
-| **Dephasing** | \(L = \sqrt{\gamma_\phi}\,\sigma_z\) | Off-diagonal decay | \(T_2\) |
-| **Relaxation** | \(L = \sqrt{\gamma_1}\,\sigma_-\) | Energy loss \(|1\rangle \to |0\rangle\) | \(T_1\) |
+| **Dephasing** | `L = √(γ_φ) * σ_z` | Off-diagonal decay | `T₂` |
+| **Relaxation** | `L = √(γ₁) * σ_-` | Energy loss (`|1⟩ → |0⟩`) | `T₁` |
 
-They’re related by:
-\[
-\frac{1}{T_2} = \frac{1}{2T_1} + \gamma_\phi
-\]
+Relation between coherence and relaxation times:
 
----
+```
+1/T₂ = 1/(2T₁) + γ_φ
+```
 
 ## 5. Entropy, Purity, and Information Flow
 
-- **Purity** \(P = \mathrm{Tr}(\rho^2)\) decreases under decoherence.  
-- **Entropy** \(S(\rho)\) increases as phase information leaks into the environment.  
-- In **non-Markovian systems**, information can temporarily flow back — showing *revivals* of coherence.
-
----
+- **Purity:** `P(t) = Tr(ρ_S²(t))` decreases under decoherence.  
+- **Entropy:** `S(ρ_S)` increases as phase information leaks into the environment.  
+- In **non-Markovian** systems, information can temporarily flow back — showing *revivals* of coherence.
 
 ## 6. Measurement as an Extreme Case
 
-A **measurement** is simply a strong system–environment coupling,  
-where the environment (apparatus) becomes perfectly correlated with the system’s basis states.  
-Tracing out the apparatus leaves \(\rho_S\) **diagonal** — full decoherence.
+A **measurement** is a strong system–environment coupling.  
+The environment (apparatus) becomes perfectly correlated with the system’s basis states.
 
+Tracing out the apparatus leaves `ρ_S` **diagonal** — complete decoherence.  
 POVMs generalize this to non-projective, probabilistic measurements.
-
----
 
 ## 7. Practical Tools to Preserve Isolation
 
 Real-world quantum engineers approximate isolation by:
 
-- **Physical shielding** → vacuum chambers, cryogenics, filtering  
-- **Hamiltonian sweet spots** → noise-insensitive qubit designs  
-- **Dynamical decoupling** → spin echo, pulse sequences  
-- **Quantum error correction** → redundancy in encoded qubits  
+- **Physical shielding:** vacuum chambers, cryogenics, filtering  
+- **Hamiltonian sweet spots:** noise-insensitive qubit designs  
+- **Dynamical decoupling:** spin echo, pulse sequences  
+- **Quantum error correction:** redundancy in encoded qubits  
 
-All aim to suppress \(H_{\text{int}}\) — the interaction Hamiltonian — that causes decoherence.
-
----
+All aim to suppress `H_int` — the interaction Hamiltonian causing decoherence.
 
 ## 8. Worked Example: Single-Qubit Dephasing
 
-Start with \(|+\rangle = (|0\rangle + |1\rangle)/\sqrt{2}\):
+Start with a superposition state:
 
-\[
-\rho_S(0) = \frac{1}{2}\begin{pmatrix}1 & 1 \\ 1 & 1\end{pmatrix}
-\]
+```
+|+⟩ = (|0⟩ + |1⟩) / √2
+```
 
-Under pure dephasing with rate \(\Gamma\):
+Initial density matrix:
 
-\[
-\rho_S(t) =
-\begin{pmatrix}
-\frac{1}{2} & \frac{1}{2} e^{-\Gamma t} \\
-\frac{1}{2} e^{-\Gamma t} & \frac{1}{2}
-\end{pmatrix}
-\]
+```
+ρ_S(0) = 1/2 * [[1, 1],
+                [1, 1]]
+```
 
-- **Purity:** \(P(t) = \frac{1}{2}(1 + e^{-2\Gamma t})\)  
-- **Entropy:** increases with time  
-- **Long-time limit:** \(\rho_S \to \frac{1}{2}I\) (completely mixed)
+Under pure dephasing with rate `Γ`:
 
-Populations remain, coherence fades — the signature of decoherence.
+```
+ρ_S(t) = [[1/2, (1/2)e^(-Γt)],
+          [(1/2)e^(-Γt), 1/2]]
+```
 
----
+- Purity: `P(t) = 1/2 (1 + e^(-2Γt))`  
+- Entropy: increases with time  
+- Long-time limit: `ρ_S → (1/2)I` (completely mixed)
+
+Populations remain; coherence fades — the signature of decoherence.
 
 ## 9. The Takeaway
 
@@ -428,12 +403,9 @@ Populations remain, coherence fades — the signature of decoherence.
 | Coherence | Fully maintained | Gradually lost |
 | Information Flow | Internal only | Leaks to environment |
 
----
-
 ## 10. The Quantum Moral
 
 An **isolated** quantum system evolves like a perfect symphony — no notes lost, no information leaked.  
 An **open** quantum system is like playing that symphony in a storm — the music fades as the environment listens in.
 
 Isolation is the dream; decoherence is the price of reality.
-
