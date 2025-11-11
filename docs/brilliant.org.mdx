@@ -1088,6 +1088,63 @@ No jumps, no gaps, just infinite possibilities in between.
 Each shade is a **different superposition**,  
 and together, they form a **continuum** of all possible quantum states. 🌈✨
 
+# 🧙‍♂️ Oracles in Quantum Computing (In Short)
+
+In quantum computing, an **oracle** is like a **mystery box** — a black box function that can answer yes/no questions about data, but without revealing how it works inside.
+
+---
+
+## 💡 What It Does
+
+An oracle is a **quantum operation** (a unitary function) that tells us something about a hidden rule.
+
+Example:
+---
+f(x) = 0 or 1
+---
+
+The oracle lets a quantum computer ask questions like:
+> “For which inputs x does f(x) = 1?”
+
+It flips the phase or bit of the quantum state depending on the answer — without destroying the superposition.
+
+---
+
+## ⚙️ How It Works
+
+Mathematically:
+---
+O|x, y⟩ = |x, y ⊕ f(x)⟩
+---
+
+- `|x⟩` is the input  
+- `|y⟩` is an output qubit  
+- `⊕` means XOR (exclusive OR)
+
+This lets the quantum computer query **all possible inputs at once** using superposition.
+
+---
+
+## 🚀 Why It’s Useful
+
+Oracles power many famous quantum algorithms:
+
+| Algorithm | What the Oracle Does |
+|------------|----------------------|
+| **Grover’s Algorithm** | Marks the “correct” answer in a database search |
+| **Deutsch–Jozsa** | Checks if a function is constant or balanced |
+| **Simon’s Algorithm** | Finds hidden patterns or symmetries |
+| **Shor’s Algorithm** | Uses oracles in modular arithmetic to find factors |
+
+---
+
+## 🧩 TL;DR
+
+> An **oracle** is a quantum “question box” that knows a secret rule.  
+> The quantum computer can **query it in superposition**,  
+> learning about many inputs at once — without looking inside.
+
+
 
 
 
