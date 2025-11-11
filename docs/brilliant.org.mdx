@@ -822,6 +822,156 @@ quantum information gets entangled with the environment and stops being visible 
 
 ![Decoenercee](https://github.com/r-karra/QuantumAI/blob/main/Decoenercee.png)
 
+---
+
+
+# ⚛️ Why Scaling a Quantum State Doesn’t Change Probabilities
+
+The expression:
+
+```
+100 × (0.1|0⟩ + 0.995|1⟩) = 10|0⟩ + 99.5|1⟩
+```
+
+looks like we’re just making the numbers bigger.  
+But here’s the trick: **in quantum mechanics, only relative ratios matter**, not the overall scale.
+
+---
+
+## 🧠 Step 1: The Basic Idea
+
+A quantum state is written as:
+
+```
+|ψ⟩ = α|0⟩ + β|1⟩
+```
+
+The numbers `α` and `β` are called **amplitudes**.  
+They’re complex numbers whose squared magnitudes give probabilities:
+
+```
+P(0) = |α|² / (|α|² + |β|²)
+P(1) = |β|² / (|α|² + |β|²)
+```
+
+---
+
+## 🧩 Step 2: Why Scaling Doesn’t Change Anything
+
+If you multiply the whole state by any nonzero constant `k`, you get:
+
+```
+|ψ'⟩ = k(α|0⟩ + β|1⟩)
+```
+
+Then the probabilities become:
+
+```
+P'(0) = |kα|² / (|kα|² + |kβ|²)
+       = |k|²|α|² / |k|²(|α|² + |β|²)
+       = |α|² / (|α|² + |β|²)
+```
+
+So the `|k|²` cancels out completely!
+
+That means the **relative weights** (the ratio between α and β) determine the physics, not the overall size.
+
+---
+
+## 💡 Step 3: Your Example
+
+Starting with:
+
+```
+|ψ⟩ = 0.1|0⟩ + 0.995|1⟩
+```
+
+If we multiply it by 100:
+
+```
+|ψ'⟩ = 100 × (0.1|0⟩ + 0.995|1⟩)
+      = 10|0⟩ + 99.5|1⟩
+```
+
+Now, let’s check the probabilities.
+
+---
+
+### For |ψ⟩ = 0.1|0⟩ + 0.995|1⟩
+
+```
+|α|² = 0.1² = 0.01
+|β|² = 0.995² ≈ 0.9900
+Total = 1.000
+```
+
+So:
+
+```
+P(0) = 0.01 / 1.00 = 0.01
+P(1) = 0.99 / 1.00 = 0.99
+```
+
+---
+
+### For |ψ'⟩ = 10|0⟩ + 99.5|1⟩
+
+```
+|α'|² = 10² = 100
+|β'|² = 99.5² ≈ 9900.25
+Total = 10000.25
+```
+
+So:
+
+```
+P'(0) = 100 / 10000.25 ≈ 0.01
+P'(1) = 9900.25 / 10000.25 ≈ 0.99
+```
+
+✅ Same probabilities!  
+Even though the numbers are 100× bigger, the *ratios* (and therefore the probabilities) are unchanged.
+
+---
+
+## 📏 Step 4: Why We Normalize States
+
+Because scaling doesn’t change physics, we usually choose to make life easy by **normalizing**:
+
+```
+|α|² + |β|² = 1
+```
+
+This just ensures the total probability sums to 1.  
+It’s like saying, “let’s make the whole pie exactly 100%.”
+
+---
+
+## 🎯 TL;DR
+
+> Multiplying a quantum state by a constant changes its size,  
+> but not the *relative probabilities* of measuring each outcome.
+
+That’s why:
+
+```
+100×(0.1|0⟩ + 0.995|1⟩)
+```
+and
+```
+0.1|0⟩ + 0.995|1⟩
+```
+represent **the same physical quantum state**, just unnormalized vs. normalized.
+
+---
+
+## 🧩 Bonus Thought
+
+Quantum states are like musical chords —  
+turning up the volume (scaling the amplitudes) doesn’t change the tune (ratios of notes),  
+just how loud it plays.
+
+
 
 
 
