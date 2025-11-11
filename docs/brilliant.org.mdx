@@ -1145,6 +1145,134 @@ Oracles power many famous quantum algorithms:
 > learning about many inputs at once — without looking inside.
 
 
+# Information = log_2(n) bits.
+Excellent — this is the heart of information theory, and it’s surprisingly intuitive once you think in “yes/no questions.”
+# 💡 Why Information = log₂(n)
+
+Let’s talk about how *information* measures how much uncertainty we remove when we learn something.
+
+---
+
+## 🎲 Step 1: Information as “Yes/No” Questions
+
+Imagine you’re guessing something hidden, like:
+- Is the coin heads or tails?
+- Which card did I pick?
+- What number am I thinking of?
+
+Each **yes/no question** gives you **1 bit** of information.
+
+That means **1 bit = 1 question’s worth of knowledge**.
+
+---
+
+## 🪙 Step 2: Two Outcomes → 1 Bit
+
+If there are only **2 possible outcomes**, like:
+
+---
+Heads or Tails
+0 or 1
+True or False
+---
+
+
+Then **1 question** (1 bit) is enough to find out which one it is.
+
+So: 
+---
+n = 2 → Information = log₂(2) = 1 bit
+---
+
+
+---
+
+## 🎯 Step 3: More Outcomes Need More Bits
+
+Now, imagine there are **1024 possible outcomes** — like guessing a number from 1 to 1024.
+
+Each yes/no question halves the possibilities:
+
+---
+1024 → 512 → 256 → 128 → 64 → 32 → 16 → 8 → 4 → 2 → 1
+---
+
+It takes **10 halving steps**, or **10 bits**, to narrow it down to one answer.
+
+So:
+---
+n = 1024 → Information = log₂(1024) = 10 bits
+---
+
+---
+
+## 🧮 Step 4: The Pattern
+
+As you can see, every time you add 1 bit, the number of possible outcomes doubles:
+
+| Bits | Possible Outcomes (n) |
+|------|-----------------------|
+| 1 | 2 |
+| 2 | 4 |
+| 3 | 8 |
+| 4 | 16 |
+| 5 | 32 |
+| 10 | 1024 |
+
+That’s why we say:
+
+---
+n = 2^(bits)
+---
+
+
+And if you flip that around:
+---
+bits = log₂(n)
+---
+
+
+---
+
+## 🧠 Step 5: The Meaning
+
+- The **number of bits** tells you how many “yes/no” questions you need to know the answer.
+- The **logarithm base 2** just means “count how many times you can cut the possibilities in half until only one remains.”
+
+---
+
+## 🌍 Step 6: Real-World Intuition
+
+| Example | Possible Outcomes | Information Needed |
+|----------|------------------:|--------------------|
+| Coin flip | 2 | 1 bit |
+| Dice roll | 6 | ≈ 2.6 bits |
+| Deck of 52 cards | 52 | ≈ 5.7 bits |
+| 1024 numbers | 1024 | 10 bits |
+
+More possibilities = more uncertainty = more information needed to find the answer.
+
+---
+
+## 🔢 Step 7: The Formula
+
+For any number of outcomes `n`, the information needed to know the exact one is:
+---
+Information = log₂(n) bits
+---
+
+---
+
+## 💡 TL;DR
+
+> Each bit of information answers one yes/no question.  
+> Every time you double the number of possibilities, you need one more bit.  
+> That’s why:
+>
+> ```
+> Information = log₂(Number of possibilities)
+> ```
+
 
 
 
