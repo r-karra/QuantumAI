@@ -2652,17 +2652,67 @@ Quantum gates are linear, so you can apply them to each term individually.
 
 Once you accept that rule, the math becomes nothing more than substituting definitions and simplifying signs.
 
+# Full elementwise multiplication: H · (Z·X)
 
+H · (Z · X)
+turns out to be:
+(1/√2) [ -1   1
+         1    1 ]
+Here’s how to see what this matrix is doing, not just calculate it.
+1. The first column tells you:
 
+What happens to |0⟩ after X, then Z, then H.
 
+Take the first column:
+(1/√2) [ -1
+         1 ]
+This is exactly the vector form of:
+|−⟩ = (|0⟩ − |1⟩)/√2
 
+So the whole stacked operation sends |0⟩ → |−⟩ (global − ignored).
+That matches the intuitive explanation earlier.
 
+You're literally looking at the transformed basis state.
+2. The second column tells you:
 
+What happens to |1⟩ after the same sequence.
 
+Second column:
+(1/√2) [ 1
+         1 ]
+That’s exactly:
+|+⟩ = (|0⟩ + |1⟩)/√2
+So the whole operation sends |1⟩ → |+⟩.
+3. What does this mean visually?
 
+You created a gate that…
 
+converts |0⟩ → |−⟩
 
+converts |1⟩ → |+⟩
 
+This is like a “basis swap with a twist”:
+
+X flips the bit
+
+Z flips the phase on the flipped bit
+
+H rotates into ± basis
+
+The result is a basis where "minus" comes out of the old |0⟩,
+and "plus" comes out of the old |1⟩.
+
+The matrix literally shows this:
+[ column 1  column 2 ]
+= [ new |0⟩   new |1⟩ ]
+So when you look at:
+(1/√2) [ -1   1
+         1    1 ]
+you’re seeing the transformed basis sitting right there as the columns, like two little flags:
+
+First flag: “I’m |−⟩ now!”
+
+Second flag: “I’m |+⟩ now!”
 
 
 
