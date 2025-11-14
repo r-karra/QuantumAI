@@ -2714,6 +2714,104 @@ First flag: “I’m |−⟩ now!”
 
 Second flag: “I’m |+⟩ now!”
 
+# Understanding Why H(ZX) Becomes (GitHub-friendly)
+
+This README shows **every multiplication step**, written so it renders correctly on GitHub (no LaTeX needed).
+Everything below uses plain text / ASCII/Unicode math so the preview shows the matrices cleanly.
+
+---
+
+## 1. The three gate matrices
+
+We start with the standard single-qubit Pauli and Hadamard matrices.
+
+X = 
+[ 0 1 ]
+[ 1 0 ]
+
+Z =
+[ 1 0 ]
+[ 0 -1 ]
 
 
+H = (1 / sqrt(2)) *
+[ 1 1 ]
+[ 1 -1 ]
 
+Goal:
+1. Compute Z · X
+2. Compute H · (Z X)
+
+---
+
+## 2. Step A — Multiply Z · X
+
+Matrix multiplication (rows of Z) · (columns of X):
+
+Z * X =
+[ 1 0 ] [ 0 1 ]
+[ 0 -1 ] * [ 1 0 ]
+
+
+Compute entries:
+
+- Top-left (1,1): 1*0 + 0*1 = 0  
+- Top-right (1,2): 1*1 + 0*0 = 1  
+- Bottom-left (2,1): 0*0 + (-1)*1 = -1  
+- Bottom-right (2,2): 0*1 + (-1)*0 = 0
+
+So
+Z X =
+[ 0 1 ]
+[-1 0 ]
+
+
+---
+
+## 3. Step B — Multiply H · (Z X)
+
+Write H without the scalar first (we'll apply 1/√2 at the end):
+
+A = 
+[ 1 1 ]
+[ 1 -1 ]
+
+
+B = Z X =
+[ 0 1 ]
+[-1 0 ]
+
+
+Compute A*B entry-by-entry:
+
+- (1,1): 1*0 + 1*(-1) = -1  
+- (1,2): 1*1 + 1*0 = 1  
+- (2,1): 1*0 + (-1)*(-1) = 1  
+- (2,2): 1*1 + (-1)*0 = 1
+
+So the product (before scalar) is:
+[ -1 1 ]
+[ 1 1 ]
+
+
+Apply the Hadamard scalar (1 / sqrt(2)):
+
+H(ZX) = (1 / sqrt(2)) *
+[ -1 1 ]
+[ 1 1 ]
+
+
+This is the final result.
+
+---
+
+## 4. Compact summary
+
+ZX =
+[ 0 1 ]
+[-1 0 ]
+
+
+H(ZX) = (1 / sqrt(2)) *
+[ -1 1 ]
+[ 1 1 ]
