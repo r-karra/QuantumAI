@@ -2793,3 +2793,84 @@ H(ZX) = (1 / sqrt(2)) *
 ```
 
 ---
+# Explanation of Applying Hadamard to the First Qubit
+
+Consider the two-qubit state:
+|ψ⟩ = |0⟩ ⊗ |0⟩ = |00⟩
+
+
+We apply the Hadamard gate **only to the first qubit**.  
+The operation is written as:
+H₁ |ψ⟩ = (H|0⟩) ⊗ |0⟩
+
+
+---
+
+## Step 1 — Apply Hadamard on |0⟩
+
+The Hadamard gate transforms |0⟩ into an equal superposition:
+H|0⟩ = (|0⟩ + |1⟩) / √2
+
+
+Substitute into the expression:
+H₁ |ψ⟩ = ((|0⟩ + |1⟩) / √2) ⊗ |0⟩
+
+
+---
+
+## Step 2 — Factor out the scalar
+= (1 / √2) * (|0⟩ + |1⟩) ⊗ |0⟩
+
+
+---
+
+## Step 3 — Distribute the tensor product
+= (1 / √2) * (|0⟩ ⊗ |0⟩ + |1⟩ ⊗ |0⟩)
+
+
+---
+
+## Step 4 — Convert to two-qubit notation
+|0⟩ ⊗ |0⟩ = |00⟩
+|1⟩ ⊗ |0⟩ = |10⟩
+
+
+So the final state is:
+H₁ |ψ⟩ = (|00⟩ + |10⟩) / √2
+
+
+---
+
+## Interpretation
+
+- The Hadamard gate puts **only the first qubit** into superposition.
+- The second qubit remains **definitely** `|0⟩`.
+- The resulting two-qubit system is a **superposition of two classical states**:
+50%: |00⟩
+50%: |10⟩
+
+
+The qubits are **not** entangled yet — measuring the first changes nothing about the known value of the second.
+
+To create entanglement, a **CNOT** must follow.
+
+Meaning, in words
+
+You start with two qubits in $$\|00>$$
+You apply Hadamard only to the first qubit.
+That puts the first qubit into superposition, while the second qubit stays at $$\|0>$$
+
+The result is a two-state superposition between $$\|00>$$ and $$\|10>$$
+
+Graphically on Bloch intuition:\
+Initial:     |00>  (first qubit = 0)\
+After H1:    |00> and |10> equally, phase +, normalized
+
+So now:
+
+If you measured the first qubit, it would be 0 or 1 with 50% probability,\
+but conditional on that result, the second qubit is still definitely 0.
+
+
+
+
