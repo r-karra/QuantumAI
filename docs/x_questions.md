@@ -13,9 +13,9 @@ In a class of 60 students, 32 like Mathematics, 28 like Science, and 18 like bot
 
 ### **2. Trigonometry — Identity Simplification**
 Prove that:
-\[
+$$[
 \frac{1 - \cos\theta}{\sin\theta} + \frac{\sin\theta}{1 - \cos\theta} = 2\csc\theta
-\]
+\]$$
 
 ---
 
@@ -23,9 +23,9 @@ Prove that:
 
 ### **3. Quadratic Equations — Roots & Nature**
 Solve the quadratic equation:
-\[
+$$[
 2x^2 - 7x + 3 = 0
-\]
+\]$$
 and determine the nature of its roots.
 
 ---
@@ -34,10 +34,9 @@ and determine the nature of its roots.
 From an external point \(P\), two tangents \(PA\) and \(PB\) are drawn to a circle with center \(O\).
 
 Prove that:
-\[
-PA = PB
-\]
-and show that \(OP \perp AB\).
+$$[PA = PB\]$$ 
+
+and show that $$OP \perp AB\$$
 
 ---
 
